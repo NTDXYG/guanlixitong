@@ -167,9 +167,9 @@ cn.itheima.domain.Tiaoxiushenqing,cn.itheima.domain.Kaoqinjilu;"
 					<%
 						} else {
 							String sql = "select * from chuchaishenqing where tongxingrenyuan like '%" + name
-									+ "%' and chuchaishijian >= ?";
+									+ "%' and chuchaishijian >= ? and chuchaishijian <= ?";
 							List<Chuchaishenqing> cc = runner.query(sql,
-									new BeanListHandler<Chuchaishenqing>(Chuchaishenqing.class), begin);
+									new BeanListHandler<Chuchaishenqing>(Chuchaishenqing.class), begin,end);
 					%>
 					<tbody>
 						<%
@@ -231,9 +231,9 @@ cn.itheima.domain.Tiaoxiushenqing,cn.itheima.domain.Kaoqinjilu;"
 					</tbody>
 					<%
 						} else {
-							String sql = "select * from jiabanshenqing where staff_name = '" + name + "' and jiabanshijian >= ?";
+							String sql = "select * from jiabanshenqing where staff_name = '" + name + "' and jiabanshijian >= ? and jiabanshijian <= ?";
 							List<Jiabanshenqing> jb = runner.query(sql, new BeanListHandler<Jiabanshenqing>(Jiabanshenqing.class),
-									begin);
+									begin,end);
 					%>
 					<tbody>
 						<%
@@ -379,9 +379,9 @@ cn.itheima.domain.Tiaoxiushenqing,cn.itheima.domain.Kaoqinjilu;"
 					</tbody>
 					<%
 						} else {
-							String sql = "select * from kaoqinjilu where staff_name = '" + name + "' and kaoqinshijian >= ?";
+							String sql = "select * from kaoqinjilu where staff_name = '" + name + "' and kaoqinshijian >= ? and kaoqinshijian <= ?";
 							List<Kaoqinjilu> kq = runner.query(sql, new BeanListHandler<Kaoqinjilu>(Kaoqinjilu.class),
-									begin);
+									begin,end);
 					%>
 					<tbody>
 						<%
