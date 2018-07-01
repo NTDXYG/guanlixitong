@@ -289,7 +289,7 @@ cn.itheima.domain.Shujuzidian,cn.itheima.domain.Staff,org.apache.commons.dbutils
 
 						<%
 							String sql2 = "SELECT SUM(chuchaitianshu) FROM chuchaishenqing WHERE tongxingrenyuan LIKE '%"
-											+ s.getName() + "%' AND chuchaishijian >= '" + begin + "'";
+											+ s.getName() + "%' AND chuchaishijian >= '" + begin + "' AND chuchaishijian<='"+end+"'";
 									if (qr.query(sql2, new ScalarHandler()) == null) {
 						%><td>0天</td>
 						<%
@@ -302,7 +302,7 @@ cn.itheima.domain.Shujuzidian,cn.itheima.domain.Staff,org.apache.commons.dbutils
 
 						<%
 							String sql3 = "SELECT SUM(jiabanshichang) FROM jiabanshenqing WHERE staff_name = '" + s.getName()
-											+ "' AND jiabanshijian >= '" + begin + "'";
+											+ "' AND jiabanshijian >= '" + begin + "' AND jiabanshijian<='"+end+"'";
 									if (qr.query(sql3, new ScalarHandler()) == null) {
 						%><td>0天</td>
 						<%
@@ -328,7 +328,7 @@ cn.itheima.domain.Shujuzidian,cn.itheima.domain.Staff,org.apache.commons.dbutils
 
 						<%
 							String sql5 = "SELECT COUNT(*) FROM kaoqinjilu WHERE staff_name = '" + s.getName()
-											+ "'AND leibie = '迟到' AND kaoqinshijian >= '" + begin + "'";
+											+ "'AND leibie = '迟到' AND kaoqinshijian >= '" + begin + "' AND kaoqinshijian <= '"+end+"'";
 									if (qr.query(sql5, new ScalarHandler()) == null) {
 						%><td></td>
 						<%
@@ -341,7 +341,7 @@ cn.itheima.domain.Shujuzidian,cn.itheima.domain.Staff,org.apache.commons.dbutils
 
 						<%
 							String sql6 = "SELECT COUNT(*) FROM kaoqinjilu WHERE staff_name = '" + s.getName()
-											+ "'AND leibie = '早退' AND kaoqinshijian >= '" + begin + "'";
+											+ "'AND leibie = '早退' AND kaoqinshijian >= '" + begin + "' AND kaoqinshijian <= '"+end+"'";
 									if (qr.query(sql6, new ScalarHandler()) == null) {
 						%><td></td>
 						<%
@@ -354,7 +354,7 @@ cn.itheima.domain.Shujuzidian,cn.itheima.domain.Staff,org.apache.commons.dbutils
 
 						<%
 							String sql7 = "SELECT COUNT(*) FROM kaoqinjilu WHERE staff_name = '" + s.getName()
-											+ "'AND leibie = '漏打卡' AND kaoqinshijian >= '" + begin + "'";
+											+ "'AND leibie = '漏打卡' AND kaoqinshijian >= '" + begin + "'AND kaoqinshijian <= '"+end+"'";
 									if (qr.query(sql7, new ScalarHandler()) == null) {
 						%><td></td>
 						<%
@@ -367,7 +367,7 @@ cn.itheima.domain.Shujuzidian,cn.itheima.domain.Staff,org.apache.commons.dbutils
 
 						<%
 							String sql8 = "SELECT COUNT(*) FROM kaoqinjilu WHERE staff_name = '" + s.getName()
-											+ "'AND leibie = '早会未到' AND kaoqinshijian >= '" + begin + "'";
+											+ "'AND leibie = '早会未到' AND kaoqinshijian >= '" + begin + "' AND kaoqinshijian <= '"+end+"'";
 									if (qr.query(sql8, new ScalarHandler()) == null) {
 						%><td></td>
 						<%
@@ -380,7 +380,7 @@ cn.itheima.domain.Shujuzidian,cn.itheima.domain.Staff,org.apache.commons.dbutils
 
 						<%
 							String sql9 = "SELECT COUNT(*) FROM kaoqinjilu WHERE staff_name = '" + s.getName()
-											+ "'AND leibie = '早操未到' AND kaoqinshijian >= '" + begin + "'";
+											+ "'AND leibie = '早操未到' AND kaoqinshijian >= '" + begin + "' AND kaoqinshijian <= '"+end+"'";
 									if (qr.query(sql9, new ScalarHandler()) == null) {
 						%><td></td>
 						<%
@@ -393,7 +393,7 @@ cn.itheima.domain.Shujuzidian,cn.itheima.domain.Staff,org.apache.commons.dbutils
 
 						<%
 							String sql10 = "SELECT COUNT(*) FROM kaoqinjilu WHERE staff_name = '" + s.getName()
-											+ "'AND leibie = '会议缺席' AND kaoqinshijian >= '" + begin + "'";
+											+ "'AND leibie = '会议缺席' AND kaoqinshijian >= '" + begin + "' AND kaoqinshijian <= '"+end+"'";
 									if (qr.query(sql10, new ScalarHandler()) == null) {
 						%><td></td>
 						<%
